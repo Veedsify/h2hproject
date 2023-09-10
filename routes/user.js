@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const crypto = require("crypto");
 const paystack = require("paystack")(process.env.PAYSTACK_SECRET_KEY);
-const queryDb = require("../libs/prisma")
+const { dbQuery } = require("../mysql/mysql")
 const jwt = require('jsonwebtoken');
 const { validateUser } = require("./middleware");
 const iquotes = require('iquotes');
@@ -14,11 +14,7 @@ router.post("/initiate-payment", async (req, res) => {
 
   try {
 
-    const checkForUser = await queryDb.h2h_users.findFirst({
-      where: {
-        email: email
-      }
-    })
+    const [checkForUser] = await dbQuery("SELECT * FROM h2h_users WHERE email = ? LIMIT 1", [email])
 
     if (checkForUser && Object.keys(checkForUser).length > 0) {
       return res.json({ message: "Sorry user already exist, Please Login" })
@@ -59,16 +55,9 @@ router.get("/verify-payment", (req, res) => {
         const { first_name: firstname, last_name: lastname } = metadata
 
         // CREATE USER
-        const createUser = await queryDb.h2h_users.create({
-          data: {
-            first_name: firstname,
-            last_name: lastname,
-            email: customer.email,
-            user_id: customer.customer_code,
-            progress: "0",
-            paid_status: "paid",
-          }
-        })
+        const createUser = await dbQuery(`
+          INSERT INTO h2h_users (first_name, last_name, email, user_id, progress, paid_status) VALUES (?,?,?,?,?,?)
+        `, [firstname, lastname, customer.email, `${customer.customer_code}${crypto.randomBytes(3).toString("hex")}`, "0", "paid"])
 
         if (createUser) {
           // CREATE A SESSION OF THE NEW USER
@@ -77,14 +66,10 @@ router.get("/verify-payment", (req, res) => {
 
           await welcomeMail(userEmail)
 
-          const thisUser = await queryDb.h2h_users.findFirst({
-            where: {
-              email: userEmail
-            }
-          })
+          const [user] = await dbQuery("SELECT * FROM h2h_users WHERE email = ? LIMIT 1", [userEmail])
 
           const accessToken = jwt.sign(
-            thisUser,
+            { user },
             process.env.JSON_TOKEN_SECRET
           )
 
@@ -110,27 +95,16 @@ router.get("/verify-payment", (req, res) => {
 
 // UPDATE PROGRESS
 router.post("/update-progress", validateUser, async (req, res) => {
-  const { user_id } = req.user
+  const { user_id } = req.user.user
   const { progress, current } = req.body
 
-  const thisUser = await queryDb.h2h_users.findFirst({
-    where: {
-      user_id: user_id,
-    },
-  })
+  const [thisUser] = await dbQuery("SELECT * FROM h2h_users WHERE user_id = ? LIMIT 1", [user_id])
+
 
   let updateProgress;
 
   if (Number(thisUser.progress) < progress) {
-    updateProgress = await queryDb.h2h_users.update({
-      where: {
-        user_id: user_id
-      },
-      data: {
-        progress,
-        current_page: current
-      }
-    })
+    updateProgress = await dbQuery("UPDATE h2h_users SET progress = ? AND current_page = ? WHERE user_id = ?", [progress, current, user_id])
   }
 
   if (updateProgress) {
@@ -141,19 +115,11 @@ router.post("/update-progress", validateUser, async (req, res) => {
 
 // USER
 router.get("/:user_id", validateUser, async (req, res) => {
-  const { user_id } = req.user
+  const { user_id } = req.user.user
 
-  const getCourse = await queryDb.h2h_course.findFirst({
-    orderBy: {
-      h2h_id: "asc"
-    }
-  })
+  const [getCourse] = await (dbQuery(`SELECT * FROM h2h_course ORDER BY h2h_id ASC LIMIT 1`))
 
-  const thisUser = await queryDb.h2h_users.findFirst({
-    where: {
-      user_id: user_id,
-    },
-  })
+  const [thisUser] = await dbQuery(`SELECT * FROM h2h_users WHERE user_id = ?`, [user_id])
 
   const { quote, author } = iquotes.random();
 
