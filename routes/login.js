@@ -56,7 +56,7 @@ router.get('/verify/:token', async (req, res, next) => {
 
     if (user && user.email) {
 
-      const accesstoken = jwt.sign({ user }, JSON_TOKEN_SECRET, {
+      const accesstoken = jwt.sign(user, JSON_TOKEN_SECRET, {
         expiresIn: '3h' // Use '3h' for 3 hours
       });
 

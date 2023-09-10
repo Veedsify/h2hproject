@@ -111,12 +111,13 @@ router.get("/verify-payment", (req, res) => {
 
 // UPDATE PROGRESS
 router.post("/update-progress", validateUser, async (req, res) => {
-  const { user } = req
+  const { user_id } = req.user
+  console.log(req.user)
   const { progress, current } = req.body
 
   const thisUser = await queryDb.h2h_users.findFirst({
     where: {
-      user_id: user.user_id,
+      user_id: user_id,
     },
   })
 
@@ -125,7 +126,7 @@ router.post("/update-progress", validateUser, async (req, res) => {
   if (Number(thisUser.progress) < progress) {
     updateProgress = await queryDb.h2h_users.update({
       where: {
-        user_id: user.user_id
+        user_id: user_id
       },
       data: {
         progress,
