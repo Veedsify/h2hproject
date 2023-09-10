@@ -12,20 +12,20 @@ router.get('/:id', async function (req, res, next) {
 
   const [getCourse] = await dbQuery("SELECT * FROM h2h_course WHERE h2h_string_id = ? LIMIT 1", [id])
 
-  const count = await dbQuery("SELECT COUNT(*) AS count FROM h2h_course")
+  const [{ count }] = await dbQuery("SELECT COUNT(*) AS count FROM h2h_course")
 
-  const previousRecord = await dbQuery(`SELECT * FROM h2h_course
+  const [previousRecord] = await dbQuery(`SELECT * FROM h2h_course
                                           WHERE h2h_code < ?
                                           ORDER BY h2h_code DESC
                                           LIMIT 1;`, [getCourse.h2h_code])
 
-  const nextRecord = await dbQuery(`SELECT * FROM h2h_course
+  const [nextRecord] = await dbQuery(`SELECT * FROM h2h_course
                                           WHERE h2h_code > ?
                                           ORDER BY h2h_code ASC
                                           LIMIT 1;`, [getCourse.h2h_code])
 
   if (getCourse) {
-    return res.render('user/course', { getCourse, nextRecord, previousRecord, count });
+    return res.render('user/course', { getCourse, nextRecord, previousRecord, count: count });
   } else {
     return res.redirect("/user/1")
   }

@@ -55,9 +55,9 @@ router.get("/verify-payment", (req, res) => {
         const { first_name: firstname, last_name: lastname } = metadata
 
         // CREATE USER
-        const [createUser] = await dbQuery(`
+        const createUser = await dbQuery(`
           INSERT INTO h2h_users (first_name, last_name, email, user_id, progress, paid_status) VALUES (?,?,?,?,?,?)
-        `, [firstname, lastname, customer.email, customer.customer_code, "0", "paid"])
+        `, [firstname, lastname, customer.email, `${customer.customer_code}${crypto.randomBytes(3).toString("hex")}`, "0", "paid"])
 
         if (createUser) {
           // CREATE A SESSION OF THE NEW USER
