@@ -1,5 +1,5 @@
 var express = require('express');
-const queryDb = require('../libs/prisma');
+const { dbQuery } = require('../mysql/mysql')
 var router = express.Router();
 const { sendLoginMail } = require("../mailer/login")
 const jwt = require("jsonwebtoken")
@@ -17,11 +17,7 @@ router.get('/', function (req, res, next) {
 router.post('/new', async (req, res) => {
   const { email } = req.body
 
-  const findUser = await queryDb.h2h_users.findFirst({
-    where: {
-      email
-    }
-  })
+  const [findUser] = await dbQuery("SELECT * FROM h2h_users WHERE email = ? LIMIT 1", [email])
 
   if (findUser && Object.keys(findUser).length > 0) {
 
@@ -48,15 +44,11 @@ router.get('/verify/:token', async (req, res, next) => {
 
     const { email } = jwt.verify(token, JSON_TOKEN_SECRET);
 
-    const user = await queryDb.h2h_users.findFirst({
-      where: {
-        email
-      }
-    })
+    const [user] = await dbQuery("SELECT * FROM h2h_users WHERE email = ? LIMIT 1", [email])
 
     if (user && user.email) {
 
-      const accesstoken = jwt.sign(user, JSON_TOKEN_SECRET, {
+      const accesstoken = jwt.sign({ user }, JSON_TOKEN_SECRET, {
         expiresIn: '3h' // Use '3h' for 3 hours
       });
 
