@@ -1316,6 +1316,7 @@ video {
 
 html {
   font-size: 85%;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -1396,7 +1397,7 @@ img {
   display: block;
 }
 
-.slide-in  {
+.slide-in {
   opacity: 0;
   transition: .3s ease-in-out;
   translate: 0 -30px;
