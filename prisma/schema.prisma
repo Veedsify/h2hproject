@@ -1,0 +1,48 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model h2h_course {
+  h2h_id        Int      @id @default(autoincrement())
+  h2h_title     String   @db.VarChar(100)
+  h2h_content   String   @db.LongText
+  h2h_image     String   @db.VarChar(500)
+  h2h_link      String   @db.VarChar(100)
+  h2h_string_id String   @db.VarChar(100)
+  h2h_code      Int
+  date          DateTime @default(now())
+}
+
+model h2h_users {
+  id           Int      @id @default(autoincrement())
+  first_name   String   @db.Text
+  last_name    String   @db.Text
+  email        String   @db.VarChar(80)
+  user_id      String   @unique @db.VarChar(100)
+  progress     String?  @default("0")
+  paid_status  String
+  current_page String   @default("")
+  role         String?  @default("user")
+  date         DateTime @default(now())
+}
+
+model h2h_reviews {
+  id              Int      @id @default(autoincrement())
+  subject         String   @db.VarChar(1000)
+  review          String   @db.VarChar(1000)
+  review_id       String   @db.VarChar(100)
+  featured_status String   @db.VarChar(100)
+  date            DateTime @default(now())
+}
+
+model h2h_token_signin {
+  id      Int      @id @default(autoincrement())
+  token   String   @db.VarChar(1000)
+  user_id String   @db.VarChar(100)
+  date    DateTime @default(now())
+}

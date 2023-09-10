@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>H2H Project - Tools for Easy Connection</title>
+  <link rel="stylesheet" href="/css/output.css">
+
+  <!-- FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+
+
+
+  <!-- META OG TAGS -->
+  <meta property="og:title" content=The H2Hproject - Tools For Easy Connection>
+  <meta property="og:site_name" content=H2Hproject>
+  <meta property="og:url" content=h2hproject.com>
+  <meta property="og:description" content=The Heart 2 Heart Project Exposes those common mistakes and behaviors that cause
+    a delay in marriage and hinder the right partner from approaching you.>
+  <meta property="og:type" content=product>
+  <meta property="og:image" content=/images/logo.png>
+
+  <!-- ICONS -->
+
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+
+  <!-- SWIPPER JS -->
+  <link rel="stylesheet" href="/css/swiper.css">
+  <!-- <script defer src="/js/swiper.bundle.js"></script> -->
+
+  <!-- VEX LIBRARIES -->
+  <script src="/vex/js/vex.combined.min.js"></script>
+  <script>vex.defaultOptions.className = 'vex-theme-flat-attack'</script>
+  <link rel="stylesheet" href="/vex/css/vex.css" />
+  <link rel="stylesheet" href="/vex/css/vex-theme-flat-attack.css" />
+
+  <!-- SCRIPTS -->
+  <script defer src="/js/axios.js"></script>
+  <script defer src="/js/jquery.min.js"></script>
+  <script type="module" defer src="/js/custom.js"></script>
+
+  <!-- FAVICON -->
+  <link rel="shortcut icon" href="/images/logo.png" type="image/x-icon">
+
+</head>
+
+<body class="bg-teal-50">
+
+  <div class="fixed inset-0 bg-black opacity-30 z-50 w-full h-full overlay"></div>
+
+  <%- include('component/header') %>
+    <section class="md:flex h-full max-w-screen-2xl mx-auto p-4 md:px-4 py-16 md:py-28 mb-12 gap-5 items-center">
+
+      <!-- TEXT CONTAINER -->
+      <div class="basis-1/2">
+        <h1 class="font-bold text-4xl md:text-7xl leading-snug mb-8 ">
+          The <br><span class=" text-red-500 "> Heart 2 Heart </span> <br>Project
+        </h1>
+        <p class="md:text-lg max-w-2xl leading-loose mb-8">Getting Married at the right time is one of the best
+          things
+          in
+          life, But there
+          are
+          somethings you do that
+          delay your
+          marriage.</p>
+        <div class="mb-8">
+          <a href="#"
+            class="px-5 py-3 md:px-8 md:py-4 rounded bg-red-500 hover:bg-red-700 text-white inline-block shadow-sm">Get
+            Started</a>
+        </div>
+      </div>
+
+
+      <!-- VIDEO PLAYER -->
+      <div class="basis-1/2">
+        <iframe src="https://www.youtube.com/embed/D7CqgbRPPi8?si=PyWp8NwdRuu3rroI"
+          class="w-full block h-full aspect-video" title="YouTube video player" frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen></iframe>
+      </div>
+    </section>
+
+    <div class="bg-white">
+      <section class="h-full max-w-screen-2xl mx-auto p-4 md:px-4 py-16 md:py-28 mb-12">
+        <h2 class="text-5xl font-medium leading-snug mb-10">Who, When & <br> Why You Need <br> This.</h2>
+        <div class="grid md:grid-cols-3 gap-4">
+          <!-- CARD ONE -->
+          <div class="shadow-lg p-4 md:p-8 rounded-md aspect-video">
+            <span class="inline-block rounded p-6 bg-red-600 mb-4">
+              <span class="material-symbols-outlined icon-font text-white">
+                play_lesson
+              </span>
+            </span>
+            <h2 class="font-medium text-4xl mb-6">Who</h2>
+            <p class="md:text-lg max-w-2xl leading-loose mb-8">The Heart 2 Heart Project is tailored towards single
+              ladies
+              &
+              women, who are experiencing delays in marriage.
+            </p>
+          </div>
+          <!-- CARD TWO -->
+          <div class="shadow-lg p-4 md:p-8 rounded-md aspect-video md:-translate-y-20">
+            <span class="inline-block rounded p-6 bg-red-600 mb-4">
+              <span class="material-symbols-outlined icon-font text-white">
+                ifl
+              </span>
+            </span>
+            <h2 class="font-medium text-4xl mb-6">When</h2>
+            <p class="md:text-lg max-w-2xl leading-loose mb-8">The Heart 2 Heart Project comes into play when you find
+              out
+              that all the previous relationships you have been
+              in,
+              yielded no good results.
+            </p>
+          </div>
+          <!-- CARD THREE -->
+          <div class="shadow-lg p-4 md:p-8 rounded-md aspect-video md:-translate-y-40">
+            <span class="inline-block rounded p-6 bg-red-600 mb-4">
+              <span class="material-symbols-outlined icon-font text-white">
+                laptop_mac
+              </span>
+            </span>
+            <h2 class="font-medium text-4xl mb-6">Why</h2>
+            <p class="md:text-lg max-w-2xl leading-loose mb-8">The Heart 2 Heart Project Exposes those common mistakes
+              and
+              behaviors that cause a delay in marriage and
+              hinder the
+              right partner from approaching you.
+            </p>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- CHAPTERS -->
+    <section class="h-full max-w-screen-2xl mx-auto p-4 md:px-4 py-16 md:py-28 mb-12">
+      <div class="text-center mb-16">
+        <h4 class="text-center text-red-600 tracking-widest font-bold mb-4">CHAPTERS</h4>
+        <h2 class="text-center font-semibold text-4xl md:text-5xl mb-8">Chapters we've covered</h2>
+
+        <div class="flex items-center justify-center relative">
+          <span class="w-44 bg-red-400 absolute h-0.5"></span>
+          <span class="material-symbols-outlined absolute text-red-400 text-2xl">
+            align_stretch
+          </span>
+        </div>
+      </div>
+      <div class="md:flex items-start gap-8 py-14">
+        <div class="bg-white shadow-md rounded-md p-4 md:p-8 basis-1/3">
+          <p class="mb-1">Chapter 09</p>
+          <h2 class="text-4xl font-bold mb-5">Take Control Of habits</h2>
+          <p class="md:text-lg max-w-2xl leading-loose">
+            Some habits and addictions, sometimes affects compatibility b/w partners. Self-discipline & control are
+            highly
+            recommended.
+          </p>
+        </div>
+        <div class="basis-2/3 columns-2 gap-5 sm:columns-3 sm:gap-8 md:columns-3 [&>img:not(:first-child)]:mt-8">
+          <img src="/images/img7.webp" alt="" class="slide-in w-full object-cover">
+          <img src="/images/img12.webp" alt="" class="slide-in w-full object-cover">
+          <img src="/images/img10.webp" alt="" class="slide-in w-full object-cover">
+          <img src="/images/img9.webp" alt="" class="slide-in w-full object-cover">
+          <img src="/images/img11.webp" alt="" class="slide-in w-full object-cover">
+          <img src="/images/img4.webp" alt="" class="slide-in w-full object-cover">
+        </div>
+      </div>
+    </section>
+
+
+    <!-- PRICING -->
+    <section class="h-full max-w-screen-2xl mx-auto p-4 md:px-4 py-16 md:py-28 mb-12">
+      <div class="text-center mb-16">
+        <h4 class="text-center text-red-600 tracking-widest font-bold mb-4">CHAPTERS</h4>
+        <h2 class="text-center font-semibold text-4xl md:text-5xl mb-8">One Time Fee</h2>
+
+        <div class="flex items-center justify-center relative">
+          <span class="w-44 bg-red-400 absolute h-0.5"></span>
+          <span class="material-symbols-outlined absolute text-red-400 text-2xl">
+            align_stretch
+          </span>
+        </div>
+      </div>
+      <div class="flex items-center justify-center gap-8 py-14">
+        <div class="p-6 py-24 md:px-10 bg-white w-full md:w-3/6 flex flex-col items-center justify-center text-center">
+          <h3 class="mb-8 text-3xl md:text-6xl font-medium">$10</h3>
+
+          <ul class="full">
+            <li class="md:text-lg py-8 border-b border-gray-200">
+              Complete Book
+            </li>
+            <li class="md:text-lg py-8 border-b border-gray-200">
+              PDF and EPUB
+            </li>
+            <li class="md:text-lg py-8 border-b border-gray-200">
+              Hardcover Book
+            </li>
+            <li class="md:text-lg py-8 mb-8 ">
+              Access to Downloads
+            </li>
+          </ul>
+          <button id="initPayments"
+            class="px-5 py-3 md:px-8 md:py-4 rounded bg-red-500 hover:bg-red-700 text-white inline-block shadow-sm">
+            Buy Now
+          </button>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT THE AUTHOR -->
+    <div class="bg-white">
+      <section class="h-full max-w-screen-2xl mx-auto p-4 md:px-4 py-16 md:py-28 mb-12">
+        <div class="text-center mb-16">
+          <h4 class="text-center text-red-600 tracking-widest font-bold mb-4">ABOUT AUTHOR</h4>
+          <h2 class="text-center font-semibold text-4xl md:text-5xl mb-8">Learn about the book writer</h2>
+
+          <div class="flex items-center justify-center relative">
+            <span class="w-44 bg-red-400 absolute h-0.5"></span>
+            <span class="material-symbols-outlined absolute text-red-400 text-2xl">
+              align_stretch
+            </span>
+          </div>
+        </div>
+
+        <!-- VIDEO AND INTRO SECTION -->
+        <div class="md:grid grid-cols-2 items-center justify-between gap-8">
+          <div class="mb-8 flex items-center justify-center">
+            <div class="flex items-center justify-center relative min-h-max">
+              <img src="/images/kelly.jpg" height="500" alt="about kelly" class="block w-full">
+            </div>
+          </div>
+          <div class="mb-8">
+            <h2 class="mb-4 text-4xl md:text-5xl font-medium">Ibe Kelly</h2>
+            <p class="md:text-lg max-w-2xl leading-loose mb-4">
+              Am a man that has felt the pains of some single ladies..
+            </p>
+
+            <ul class="mb-6">
+              <li class="flex items-center mb-3">
+                <span class="material-symbols-outlined text-red-500">
+                  done
+                </span>
+                Achieved 10+ awarded
+              </li>
+              <li class="flex items-center mb-3">
+                <span class="material-symbols-outlined text-red-500">
+                  done
+                </span>
+                Very passionate about writting
+              </li>
+              <li class="flex items-center mb-3">
+                <span class="material-symbols-outlined text-red-500">
+                  done
+                </span>
+                5+ Books written
+              </li>
+            </ul>
+            <div class="flex gap-4 items-center">
+              <span class="inline-block rounded-full p-3 bg-red-500 cursor-pointer">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-player-play-filled"
+                  width="44" height="44" viewBox="0 0 24 24" stroke-width="1" stroke="#ffffff" fill="#ffffff"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                  <path d="M6 4v16a1 1 0 0 0 1.524 .852l13 -8a1 1 0 0 0 0 -1.704l-13 -8a1 1 0 0 0 -1.524 .852z"
+                    stroke-width="0" fill="#ffffff" />
+                </svg>
+              </span>
+              ⇇ Watch Video
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- MILESTONES -->
+      <section class="h-full max-w-screen-2xl mx-auto p-4 md:px-4 py-16 md:py-28 mb-12">
+        <div class="text-center mb-16">
+          <h4 class="text-center text-red-600 tracking-widest font-bold mb-4">AWESOME STATS</h4>
+          <h2 class="text-center font-semibold text-4xl md:text-5xl mb-8">All Milestones Achieved
+          </h2>
+
+          <div class="flex items-center justify-center relative">
+            <span class="w-44 bg-red-400 absolute h-0.5"></span>
+            <span class="material-symbols-outlined absolute text-red-400 text-2xl">
+              align_stretch
+            </span>
+          </div>
+        </div>
+
+        <!-- MILESTONES CONTAINER -->
+        <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3" id="milestone_container">
+          <!-- ACHEIVEMENT CONTAINER -->
+          <div class="bg-red-100 p-3 md:p-6">
+            <div class="flex items-center justify-end">
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-trophy" width="100"
+                height="100" viewBox="0 0 24 24" stroke-width="1" stroke="#FFCCCC" fill="none" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <path d="M8 21l8 0" />
+                <path d="M12 17l0 4" />
+                <path d="M7 4l10 0" />
+                <path d="M17 4v8a5 5 0 0 1 -10 0v-8" />
+                <path d="M5 9m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
+                <path d="M19 9m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
+              </svg>
+            </div>
+            <h2 class="text-7xl font-medium text-red-800"><span class="interval-load" data-speed="100"
+                data-stop="35">0</span><span>+</span></h2>
+            <p class="font-medium text-red-700 tracking-widest text-xl my-4">Achievements</p>
+          </div>
+          <!-- ACHEIVEMENT CONTAINER -->
+          <div class="bg-red-100 p-3 md:p-6">
+            <div class="flex items-center justify-end">
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-book" width="100" height="100"
+                viewBox="0 0 24 24" stroke-width="1.5" stroke="#FFCCCC" fill="none" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <path d="M3 19a9 9 0 0 1 9 0a9 9 0 0 1 9 0" />
+                <path d="M3 6a9 9 0 0 1 9 0a9 9 0 0 1 9 0" />
+                <path d="M3 6l0 13" />
+                <path d="M12 6l0 13" />
+                <path d="M21 6l0 13" />
+              </svg>
+            </div>
+            <h2 class="text-7xl font-medium text-red-800"><span class="interval-load" data-speed="2"
+                data-stop="979">0</span><span>+</span></h2>
+            <p class="font-medium text-red-700 tracking-widest text-xl my-4">Active Readers</p>
+
+          </div>
+          <!-- ACHEIVEMENT CONTAINER -->
+          <div class="bg-red-100 p-3 md:p-6">
+            <div class="flex items-center justify-end">
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hourglass-empty" width="100"
+                height="100" viewBox="0 0 24 24" stroke-width="1.5" stroke="#FFCCCC" fill="none" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <path d="M6 20v-2a6 6 0 1 1 12 0v2a1 1 0 0 1 -1 1h-10a1 1 0 0 1 -1 -1z" />
+                <path d="M6 4v2a6 6 0 1 0 12 0v-2a1 1 0 0 0 -1 -1h-10a1 1 0 0 0 -1 1z" />
+              </svg>
+            </div>
+            <h2 class="text-7xl font-medium text-red-800"><span class="interval-load" data-speed="100"
+                data-stop="15">0</span><span>+</span></h2>
+            <p class="font-medium text-red-700 tracking-widest text-xl my-4">Hours Read
+            </p>
+          </div>
+          <!-- ACHEIVEMENT CONTAINER -->
+          <div class="bg-red-100 p-3 md:p-6">
+            <div class="flex items-center justify-end">
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-shopping-cart" width="100"
+                height="100" viewBox="0 0 24 24" stroke-width="1.5" stroke="#FFCCCC" fill="none" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <path d="M6 19m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
+                <path d="M17 19m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
+                <path d="M17 17h-11v-14h-2" />
+                <path d="M6 5l14 1l-1 7h-13" />
+              </svg>
+            </div>
+            <h2 class="text-7xl font-medium text-red-800"><span class="interval-load" data-speed="100"
+                data-stop="15">0</span><span>+</span></h2>
+            <p class="font-medium text-red-700 tracking-widest text-xl my-4">Copies Sold</p>
+
+          </div>
+        </div>
+
+      </section>
+    </div>
+
+    <!-- TESTIMONIALS -->
+    <section class="h-full max-w-screen-2xl mx-auto p-4 md:px-4 py-16 md:py-28 mb-12">
+      <div class="text-center mb-24">
+        <h4 class="text-center text-red-600 tracking-widest font-bold mb-4">AWESOME FEEDBACKS</h4>
+        <h2 class="text-center font-semibold text-4xl md:text-5xl mb-8">Best reviews and & feedback by top class readers
+
+        </h2>
+
+        <div class="flex items-center justify-center relative">
+          <span class="w-44 bg-red-400 absolute h-0.5"></span>
+          <span class="material-symbols-outlined absolute text-red-400 text-2xl">
+            align_stretch
+          </span>
+        </div>
+      </div>
+
+      <div class="">
+        <div class="swiper">
+          <!-- Additional required wrapper -->
+          <div class="swiper-wrapper">
+
+            <!-- SWIPER SLIDE -->
+            <div class="swiper-slide">
+
+              <div class="flex items-center h-full justify-center">
+                <div class="flex flex-col items-center justify-center bg-white p-4 md:p-8 w-full md:w-4/6">
+                  <img src="/images/reviews/ngozi.jpeg" class="block mb-4 aspect-square rounded-full w-32 object-cover"
+                    alt="">
+                  <h4 class="text-3xl font-medium mb-4">Ngozi Okonkwo</h4>
+                  <p class="text-lg font-medium text-red-500 mb-3">Relationship Counselor</p>
+                  <p class="max-w-md text-center">As a relationship counselor, I've read countless books on dating and
+                    finding love, but 'The Tools for Easy Connection'
+                    stands out as a gem. This book provides practical and insightful advice for women looking to find a
+                    quality man after a
+                    breakup.
+                  </p>
+                </div>
+              </div>
+
+            </div>
+            <!-- SWIPER SLIDE -->
+            <div class="swiper-slide">
+
+              <div class="flex items-center h-full justify-center">
+                <div class="flex flex-col items-center justify-center bg-white p-4 md:p-8 w-full md:w-4/6">
+                  <img src="/images/reviews/chukwudili.jpg"
+                    class="block mb-4 aspect-square rounded-full w-32 object-cover" alt="">
+                  <h4 class="text-3xl font-medium mb-4">Chukwudi Eze</h4>
+                  <p class="text-lg font-medium text-red-500 mb-3">Relationship Counselor</p>
+                  <p class="max-w-md text-center">I was initially skeptical about a book promising to help women find a
+                    quality man, but 'The Tools for Easy Connection'
+                    pleasantly surprised me. The author's guidance is well-researched and psychology-backed, making it
+                    an invaluable
+                    resource for anyone navigating the complexities of dating after a breakup.
+                  </p>
+                </div>
+              </div>
+
+            </div>
+            <!-- SWIPER SLIDE -->
+            <div class="swiper-slide">
+
+              <div class="flex items-center h-full justify-center">
+                <div class="flex flex-col items-center justify-center bg-white p-4 md:p-8 w-full md:w-4/6">
+                  <img src="/images/reviews/emily.jpg" class="block mb-4 aspect-square rounded-full w-32 object-cover"
+                    alt="">
+                  <h4 class="text-3xl font-medium mb-4">Emily Sanchez</h4>
+                  <p class="text-lg font-medium text-red-500 mb-3">Divorcee and Writer</p>
+                  <p class="max-w-md text-center">Having gone through a difficult breakup myself, I stumbled upon 'The
+                    Tools for Easy Connection' in search of guidance.
+                    This book resonated with me on a personal level. The author's writing style is warm and relatable,
+                    making it an
+                    enjoyable read. The practical tips and exercises helped me regain my confidence and approach dating
+                    with a positive
+                    mindset.
+                  </p>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+          <!-- If we need pagination -->
+          <div class="swiper-pagination"></div>
+
+          <!-- If we need navigation buttons -->
+          <div class="swiper-button-prev" data-btn="◀"></div>
+          <div class="swiper-button-next" data-btn="▶"></div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <div class="bg-white">
+      <section class="h-full max-w-screen-2xl mx-auto p-4 md:px-4 py-16 md:py-28 mb-12">
+        <div class="text-center mb-16">
+          <h4 class="text-center text-red-600 tracking-widest font-bold mb-4">Get In Touch</h4>
+          <h2 class="text-center font-semibold text-4xl md:text-5xl mb-8">Contact Me</h2>
+
+          <div class="flex items-center justify-center relative">
+            <span class="w-44 bg-red-400 absolute h-0.5"></span>
+            <span class="material-symbols-outlined absolute text-red-400 text-2xl">
+              align_stretch
+            </span>
+          </div>
+        </div>
+
+        <div class="md:flex gap-6 items-center">
+          <div class="basis-4/6 bg-rose-200 p-4 md:p-8">
+            <form action="" id="contact-form">
+              <div class="mb-5 flex flex-col md:flex-row gap-4">
+                <input required type="text" id="first_name"
+                  class="px-4 py-5 block w-full border-none text-lg focus:outline-red-500" placeholder="First Name">
+                <input required type="text" id="last_name"
+                  class="px-4 py-5 block w-full border-none text-lg focus:outline-red-500" placeholder="Last Name">
+              </div>
+              <div class="mb-5">
+                <input required type="text" class="px-4 py-5 block w-full border-none  text-lg focus:outline-red-500"
+                  id="email2" placeholder="Email Address">
+                <input type="text" class="px-4 hidden py-5 w-full border-none  text-lg focus:outline-red-500" id="email"
+                  placeholder="Email Address">
+              </div>
+              <div class="mb-5">
+                <input required type="text" id="subject"
+                  class="px-4 py-5 block w-full border-none  text-lg focus:outline-red-500" placeholder="Subject">
+              </div>
+              <div class="mb-5">
+                <textarea required type="text" id="message"
+                  class="px-4 py-5 block w-full border-none text-lg focus:outline-red-500 h-72"
+                  placeholder="Your Message"></textarea>
+              </div>
+              <div class="mb-5">
+                <input type="submit"
+                  class="px-4 py-5 block w-full bg-red-800 text-white cursor-pointer border-none text-lg focus:outline-red-500"
+                  value="Send Message">
+              </div>
+            </form>
+          </div>
+          <div class="basis-2/6 bg-rose-200 p-4 md:p-10">
+            <h2 class="text-black font-bold text-2xl mb-3">Phone:</h2>
+            <a href="tel:+234 803 833 8599" class="mb-8 block">+234 803 833 8599</a>
+
+            <h2 class="text-black font-bold text-2xl mb-3">Email:</h2>
+            <a href="mailto:admin@h2hproject.com" class="mb-8 block">admin@h2hproject.com</a>
+
+            <h2 class="text-black font-bold text-2xl mb-3">Connect H2H project socials</h2>
+            <div class="flex gap-3">
+
+              <a href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-facebook" width="50"
+                  height="50" viewBox="0 0 24 24" stroke-width="1" stroke="red" fill="none" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                  <path d="M7 10v4h3v7h4v-7h3l1 -4h-4v-2a1 1 0 0 1 1 -1h3v-4h-3a5 5 0 0 0 -5 5v2h-3" />
+                </svg>
+              </a>
+
+              <a href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-instagram" width="50"
+                  height="50" viewBox="0 0 24 24" stroke-width="1" stroke="red" fill="none" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                  <path d="M4 4m0 4a4 4 0 0 1 4 -4h8a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-8a4 4 0 0 1 -4 -4z" />
+                  <path d="M12 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" />
+                  <path d="M16.5 7.5l0 .01" />
+                </svg>
+              </a>
+
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+
+    <%- include('component/footer') %>
+
+</body>
+
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>H2H Project - Tools for Easy Connection</title>
+    <link rel="stylesheet" href="/css/output.css">
+
+
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100;0,200;0,300;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+    <!-- ICONS -->
+
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+
+
+    <!-- FAVICON -->
+    <link rel="shortcut icon" href="/images/logo.png" type="image/x-icon">
+</head>
+
+<body>
+
+    <%- include('../component/header') %>
+
+
+        <section class=" h-full max-w-screen-2xl mx-auto p-2 md:px-4">
+
+            <div class="py-16 px-2 min-h-screen">
+                <div class="max-w-5xl bg-white rounded-lg mx-auto p-6 md:p-16">
+                    <!-- <div class="relative w-full flex items-center justify-center aspect-video overflow-hidden bg-black mb-8 rounded"
+                        id="view-finder">
+
+                        <h1 class=" text-3xl md:text-6xl font-medium mb-2 absolute z-20 text-white">Hi Tolu</h1>
+
+                        <img src="/images/img1.webp" alt="Background Image"
+                            class=" opacity-50 blur-sm object-cover aspect-video object-center mb-8 absolute inset-0">
+
+                    </div> -->
+
+                    <h1 class="text-3xl font-medium mb-8">
+                        <%= getCourse.h2h_title %>
+                    </h1>
+                    <img src="<%= getCourse.h2h_image %>" alt=""
+                        class="block object-cover object-center aspect-video mb-8">
+                    <fieldset class="border p-4 mb-4">
+                        <legend>
+                            <h2 class="font-medium text-sm text-red-500 uppercase tracking-wide">Key Takeaway
+                            </h2>
+                        </legend>
+                        <blockquote class="mb-6 italic text-gray-800 text-lg">
+                            <%- getCourse.h2h_content %>
+                        </blockquote>
+                    </fieldset>
+                    <h3 class="text-lg my-3">Progress: <%= ((Number(getCourse.h2h_id)/count) * 100).toFixed(0) %>%</h3>
+                    <div class="w-full bg-gray-200 mb-12 mx-auto rounded-lg overflow-hidden border border-gray-300">
+                        <div class="bg-red-500 text-xs leading-none py-1"
+                            style="width: <%= ((Number(getCourse.h2h_id)/27) * 100).toPrecision(2) %>%"></div>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <% if(previousRecord && Object.keys(previousRecord).length> 0){ %>
+                            <a href="<%= previousRecord.h2h_string_id %>"
+                                class="inline-block py-3 px-8 bg-red-500 text-white font-bold rounded">
+                                Back..
+                            </a>
+                            <% } %>
+
+                                <% if (nextRecord) { %>
+                                    <% if (Object.keys(nextRecord).length> 0) { %>
+                                        <a href="<%= nextRecord.h2h_string_id %>"
+                                            class="inline-block py-3 px-8 bg-green-500 text-white font-bold rounded">
+                                            Next..
+                                        </a>
+                                        <% } %>
+                                            <% } else{ %>
+                                                <a href="/thank-you"
+                                                    class="inline-block py-3 px-8 bg-amber-500 text-white font-bold rounded">
+                                                    Finish..
+                                                </a>
+                                                <% } %>
+
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+
+        <%- include('../component/footer') %>
+
+            <!-- SCRIPTS -->
+            <script src="/js/axios.js"></script>
+            <script src="/js/jquery.min.js"></script>
+            <script type="module" src="/js/custom.js"></script>
+            <script>
+                async function updateProgress() {
+                    const progress = "<%= ((Number(getCourse.h2h_id)/count) * 100).toFixed(0) %>"
+                    const current = "<%= getCourse.h2h_string_id %>"
+
+                    const update = await axios.post('/user/update-progress', {
+                        progress,
+                        current
+                    })
+
+                }
+
+                console.log(updateProgress())
+            </script>
+</body>
+
+</html>

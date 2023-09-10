@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>H2H Project - Tools for Easy Connection</title>
+    <link rel="stylesheet" href="/css/output.css">
+
+
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100;0,200;0,300;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+    <!-- ICONS -->
+
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+
+    <!-- SWIPPER JS -->
+    <link rel="stylesheet" href="/css/swiper.css">
+    <!-- <script defer src="/js/swiper.bundle.js"></script> -->
+
+    <!-- VEX LIBRARIES -->
+    <script src="/vex/js/vex.combined.min.js"></script>
+    <script>vex.defaultOptions.className = 'vex-theme-flat-attack'</script>
+    <link rel="stylesheet" href="/vex/css/vex.css" />
+    <link rel="stylesheet" href="/vex/css/vex-theme-flat-attack.css" />
+
+
+    <!-- SCRIPTS -->
+    <script defer src="/js/axios.js"></script>
+    <script defer src="/js/jquery.min.js"></script>
+    <script type="module" defer src="/js/custom.js"></script>
+
+
+    <!-- FAVICON -->
+    <link rel="shortcut icon" href="/images/logo.png" type="image/x-icon">
+</head>
+
+<body>
+
+    <%- include('component/header') %>
+
+
+        <section class=" h-full max-w-screen-2xl mx-auto p-2 md:px-4">
+
+            <div class="py-28 px-2 min-h-screen">
+                <div class="max-w-3xl bg-white rounded-lg mx-auto p-6 md:p-16">
+
+                    <h1 class="text-3xl font-medium mb-8">Write a review.</h1>
+                    <div class="md:flex gap-6 items-center">
+                        <div class="w-full p-4 md:p-6">
+                            <form action="">
+                                <label for=" email" class="font-medium mb-4 text-gray-600 block text-2xl">
+                                    Subject
+                                </label>
+                                <div class="mb-5">
+                                    <input type="text" id="email"
+                                        class="px-4 py-3 block border-black border w-full text-lg focus:outline-red-400">
+                                </div>
+                                <label for=" email" class="font-medium mb-4 text-gray-600 block text-2xl">
+                                    Review
+                                </label>
+                                <div class="mb-5">
+                                    <textarea type="text" id="email"
+                                        class="px-4 py-3 block aspect-video border-black border w-full text-lg focus:outline-red-400"></textarea>
+                                </div>
+                                <div class="mb-5">
+                                    <input type="submit"
+                                        class="px-4 py-3 block w-full bg-red-800 text-white cursor-pointer border-none text-lg focus:outline-red-500"
+                                        value="Submit Review">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+
+        <%- include('component/footer') %>
+
+</body>
+
+</html>

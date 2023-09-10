@@ -1,0 +1,101 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+html {
+    font-size: 85%;
+}
+
+body {
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Space Grotesk', sans-serif;
+    color: #353535;
+}
+
+p {
+    color: #353535;
+}
+
+
+img {
+    max-width: 100%;
+}
+
+.nav-action-btn {
+    outline: .07rem solid red;
+}
+
+.span-hover {
+    padding: .03rem;
+}
+
+.mobile-menu {
+    opacity: 0%;
+    pointer-events: none;
+}
+
+.mobile-menu.active {
+    opacity: 100%;
+    pointer-events: all;
+}
+
+.icon-font {
+    font-size: 44px !important;
+}
+
+.about-home-image {
+    display: block;
+}
+
+.milestone-icons {
+    height: 100px;
+}
+
+
+.swiper {
+    width: 100%;
+}
+
+.swiper-pagination {
+    margin-top: 90px;
+}
+
+
+/* DASHBOARD */
+
+#menu-toggle:checked+#menu {
+    display: block;
+}
+
+/* * {
+    outline: 1px solid red;
+} */
+.overlay {
+    display: none;
+}
+
+.overlay.active {
+    display: block;
+}
+
+
+.slide-in  {
+    opacity: 0;
+    transition: .3s ease-in-out;
+    translate: 0 -30px;
+}
+
+img.show {
+    opacity: 1;
+    transition: .3s ease-in-out;
+    translate: 0 0;
+}

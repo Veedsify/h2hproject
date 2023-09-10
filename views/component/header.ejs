@@ -1,0 +1,58 @@
+<header class="p-2 md:p-4">
+    <nav class="mx-auto bg-white max-w-screen-2xl px-4 md:px-8 py-6 rounded flex items-center shadow-sm relative">
+        <a href="/" class="flex items-center gap-4">
+            <img src="/images/logo.png" class="w-10 md:w-14" alt="logo">
+            <span class="font-bold md:text-2xl">H2HProject</span>
+        </a>
+
+        <div class="flex-1 text-right">
+            <ul class="hidden md:flex justify-end gap-8 ">
+                <li>
+                    <a href="/" class="relative hover:text-red-500 group">Home
+                        <span
+                            class="span-hover inline-block absolute bg-red-500 -bottom-4 left-0 w-full duration-300 opacity-0 group-hover:-translate-y-3 group-hover:opacity-100"></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/about" class="relative hover:text-red-500 group">About
+                        <span
+                            class="span-hover inline-block absolute bg-red-500 -bottom-4 left-0 w-full duration-300 opacity-0 group-hover:-translate-y-3 group-hover:opacity-100"></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/contact" class="relative hover:text-red-500 group">Contact
+                        <span
+                            class="span-hover inline-block absolute bg-red-500 -bottom-4 left-0 w-full duration-300 opacity-0 group-hover:-translate-y-3 group-hover:opacity-100"></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/user/1"
+                        class="nav-action-btn rounded px-7 py-3 outline-red-500 text-red-500 hover:outline-blue-500 hover:text-blue-500 hover:scale-125 relative">My
+                        Account</a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- MENU TOGGLE -->
+        <img src="/images/menu-toggle.svg" class="block md:hidden w-9 cursor-pointer" alt="menu" id="menu-toggle">
+
+
+        <!-- MOBILE MENU -->
+        <ul class="mobile-menu z-10 bg-white w-full shadow-sm absolute -bottom-60 mt-auto rounded left-0 block md:hidden">
+            <li class="hover:bg-gray-200 cursor-pointer py-4 px-4">
+                <a href="/" class="w-full h-full block">Home</a>
+            </li>
+            <li class="hover:bg-gray-200 cursor-pointer py-4 px-4">
+                <a href="/about" class="w-full h-full block">About</a>
+            </li>
+            <li class="hover:bg-gray-200 cursor-pointer py-4 px-4">
+                <a href="/contact" class="w-full h-full block">Contact</a>
+            </li>
+            <li class="bg-white outline-red-500 rounded cursor-pointer group py-4 px-4">
+                <a href="/user/1"
+                    class="w-full h-full block nav-action-btn rounded px-7 py-3 text-center outline-red-500 text-red-500 hover:outline-blue-500 hover:text-blue-500">My
+                    Account</a>
+            </li>
+        </ul>
+    </nav>
+</header>
