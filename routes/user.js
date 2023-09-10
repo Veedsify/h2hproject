@@ -36,8 +36,7 @@ router.post("/initiate-payment", async (req, res) => {
     });
 
     if (response) {
-      console.log(response);
-      res.json(response.data);
+      return res.json(response.data);
     }
   } catch (error) {
     console.error(error);
@@ -112,7 +111,6 @@ router.get("/verify-payment", (req, res) => {
 // UPDATE PROGRESS
 router.post("/update-progress", validateUser, async (req, res) => {
   const { user_id } = req.user
-  console.log(req.user)
   const { progress, current } = req.body
 
   const thisUser = await queryDb.h2h_users.findFirst({
