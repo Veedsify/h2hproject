@@ -103,14 +103,25 @@
                     const progress = "<%= ((Number(getCourse.h2h_id)/count) * 100).toFixed(0) %>"
                     const current = "<%= getCourse.h2h_string_id %>"
 
-                    const update = await axios.post('/user/update-progress', {
-                        progress,
-                        current
-                    })
+                    try{
+
+                        const update = await axios.post('/user/update-progress', {
+                            progress,
+                            current
+                        })
+
+                        if(update){
+                            console.log("Course Page")
+                        }
+                        
+                    }catch(err){
+                        console.log(err)
+                    }
+
 
                 }
 
-                console.log(updateProgress())
+                updateProgress()
             </script>
 </body>
 

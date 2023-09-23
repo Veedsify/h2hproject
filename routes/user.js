@@ -98,18 +98,22 @@ router.post("/update-progress", validateUser, async (req, res) => {
   const { user_id } = req.user.user
   const { progress, current } = req.body
 
-  const [thisUser] = await dbQuery("SELECT * FROM h2h_users WHERE user_id = ? LIMIT 1", [user_id])
+  try {
 
+    const [thisUser] = await dbQuery("SELECT * FROM h2h_users WHERE user_id = ? LIMIT 1", [user_id])
 
-  let updateProgress;
-
-  if (Number(thisUser.progress) < progress) {
-    updateProgress = await dbQuery("UPDATE h2h_users SET progress = ? AND current_page = ? WHERE user_id = ?", [progress, current, user_id])
+    if (parseInt(progress) >= parseInt(thisUser.progress)) {
+      let updateProgress = await dbQuery("UPDATE h2h_users SET progress = ?, current_page = ? WHERE user_id = ?", [progress, current, user_id])
+      if (updateProgress) {
+        res.status(200).json({ ok: "ok" })
+      }
+    } else {
+      res.status(200).json({ ok: "ok" })
+    }
+  } catch (err) {
+    res.redirect('/login')
   }
 
-  if (updateProgress) {
-    res.status(200);
-  }
 });
 
 
